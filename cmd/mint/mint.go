@@ -19,10 +19,9 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/lightningnetwork/lnd/macaroons"
 	"google.golang.org/grpc/credentials"
-	"gopkg.in/macaroon.v2"
 )
 
-func configFromEnv() (*mint.Config, error) {
+func ConfigFromEnv() (*mint.Config, error) {
 	var inputFeePpk uint = 0
 	if inputFeeEnv, ok := os.LookupEnv("INPUT_FEE_PPK"); ok {
 		fee, err := strconv.ParseUint(inputFeeEnv, 10, 16)
@@ -201,7 +200,7 @@ func main() {
 	if err != nil {
 		log.Fatal("error loading .env file")
 	}
-	mintConfig, err := configFromEnv()
+	mintConfig, err := ConfigFromEnv()
 	if err != nil {
 		log.Fatalf("error reading config: %v", err)
 	}
