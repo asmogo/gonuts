@@ -1,4 +1,4 @@
-module github.com/elnosh/gonuts
+module github.com/asmogo/gonuts
 
 go 1.22.2
 

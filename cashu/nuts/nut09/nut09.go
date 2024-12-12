@@ -1,6 +1,6 @@
 package nut09
 
-import "github.com/elnosh/gonuts/cashu"
+import "github.com/asmogo/gonuts/cashu"
 
 type PostRestoreRequest struct {
 	Outputs cashu.BlindedMessages `json:"outputs"`

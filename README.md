@@ -34,7 +34,7 @@ Implemented [NUTs](https://github.com/cashubtc/nuts/):
 With [Go](https://go.dev/doc/install) installed, you can run the following command to install the wallet:
 
 ```
-git clone https://github.com/elnosh/gonuts
+git clone https://github.com/asmogo/gonuts
 cd gonuts
 go install ./cmd/nutw/
 ```

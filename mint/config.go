@@ -3,8 +3,8 @@ package mint
 import (
 	"time"
 
-	"github.com/elnosh/gonuts/cashu/nuts/nut06"
-	"github.com/elnosh/gonuts/mint/lightning"
+	"github.com/asmogo/gonuts/cashu/nuts/nut06"
+	"github.com/asmogo/gonuts/mint/lightning"
 )
 
 type LogLevel int

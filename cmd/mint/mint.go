@@ -13,9 +13,9 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/elnosh/gonuts/cashu/nuts/nut06"
-	"github.com/elnosh/gonuts/mint"
-	"github.com/elnosh/gonuts/mint/lightning"
+	"github.com/asmogo/gonuts/cashu/nuts/nut06"
+	"github.com/asmogo/gonuts/mint"
+	"github.com/asmogo/gonuts/mint/lightning"
 	"github.com/joho/godotenv"
 	"github.com/lightningnetwork/lnd/macaroons"
 	"google.golang.org/grpc/credentials"

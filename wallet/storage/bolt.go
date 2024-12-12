@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut04"
-	"github.com/elnosh/gonuts/cashu/nuts/nut05"
-	"github.com/elnosh/gonuts/crypto"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut04"
+	"github.com/asmogo/gonuts/cashu/nuts/nut05"
+	"github.com/asmogo/gonuts/crypto"
 	bolt "go.etcd.io/bbolt"
 )
 

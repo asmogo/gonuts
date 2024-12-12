@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
-	"github.com/elnosh/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu"
 )
 
 func TestVerifyBlindSiagnatureDLEQ(t *testing.T) {

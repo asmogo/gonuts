@@ -6,9 +6,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut04"
-	"github.com/elnosh/gonuts/wallet"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut04"
+	"github.com/asmogo/gonuts/wallet"
 )
 
 func main() {

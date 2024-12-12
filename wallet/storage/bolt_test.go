@@ -11,10 +11,10 @@ import (
 	"testing"
 
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut04"
-	"github.com/elnosh/gonuts/cashu/nuts/nut05"
-	"github.com/elnosh/gonuts/crypto"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut04"
+	"github.com/asmogo/gonuts/cashu/nuts/nut05"
+	"github.com/asmogo/gonuts/crypto"
 )
 
 var (

@@ -10,11 +10,11 @@ import (
 	"github.com/btcsuite/btcd/btcutil/hdkeychain"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut07"
-	"github.com/elnosh/gonuts/cashu/nuts/nut09"
-	"github.com/elnosh/gonuts/cashu/nuts/nut13"
-	"github.com/elnosh/gonuts/crypto"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut07"
+	"github.com/asmogo/gonuts/cashu/nuts/nut09"
+	"github.com/asmogo/gonuts/cashu/nuts/nut13"
+	"github.com/asmogo/gonuts/crypto"
 	"github.com/tyler-smith/go-bip39"
 )
 

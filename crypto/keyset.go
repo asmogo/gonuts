@@ -9,8 +9,8 @@ import (
 
 	"github.com/btcsuite/btcd/btcutil/hdkeychain"
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut01"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut01"
 )
 
 const MAX_ORDER = 60

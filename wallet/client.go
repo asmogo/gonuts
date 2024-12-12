@@ -7,15 +7,15 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut01"
-	"github.com/elnosh/gonuts/cashu/nuts/nut02"
-	"github.com/elnosh/gonuts/cashu/nuts/nut03"
-	"github.com/elnosh/gonuts/cashu/nuts/nut04"
-	"github.com/elnosh/gonuts/cashu/nuts/nut05"
-	"github.com/elnosh/gonuts/cashu/nuts/nut06"
-	"github.com/elnosh/gonuts/cashu/nuts/nut07"
-	"github.com/elnosh/gonuts/cashu/nuts/nut09"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut01"
+	"github.com/asmogo/gonuts/cashu/nuts/nut02"
+	"github.com/asmogo/gonuts/cashu/nuts/nut03"
+	"github.com/asmogo/gonuts/cashu/nuts/nut04"
+	"github.com/asmogo/gonuts/cashu/nuts/nut05"
+	"github.com/asmogo/gonuts/cashu/nuts/nut06"
+	"github.com/asmogo/gonuts/cashu/nuts/nut07"
+	"github.com/asmogo/gonuts/cashu/nuts/nut09"
 )
 
 func GetMintInfo(mintURL string) (*nut06.MintInfo, error) {

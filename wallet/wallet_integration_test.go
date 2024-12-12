@@ -14,14 +14,14 @@ import (
 	"time"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut05"
-	"github.com/elnosh/gonuts/cashu/nuts/nut11"
-	"github.com/elnosh/gonuts/cashu/nuts/nut12"
-	"github.com/elnosh/gonuts/mint"
-	"github.com/elnosh/gonuts/mint/lightning"
-	"github.com/elnosh/gonuts/testutils"
-	"github.com/elnosh/gonuts/wallet"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut05"
+	"github.com/asmogo/gonuts/cashu/nuts/nut11"
+	"github.com/asmogo/gonuts/cashu/nuts/nut12"
+	"github.com/asmogo/gonuts/mint"
+	"github.com/asmogo/gonuts/mint/lightning"
+	"github.com/asmogo/gonuts/testutils"
+	"github.com/asmogo/gonuts/wallet"
 )
 
 var (

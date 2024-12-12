@@ -3,7 +3,7 @@
 // [NUT-03]: https://github.com/cashubtc/nuts/blob/main/03.md
 package nut03
 
-import "github.com/elnosh/gonuts/cashu"
+import "github.com/asmogo/gonuts/cashu"
 
 type PostSwapRequest struct {
 	Inputs  cashu.Proofs          `json:"inputs"`

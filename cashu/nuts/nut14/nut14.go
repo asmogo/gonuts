@@ -9,9 +9,9 @@ import (
 
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcec/v2/schnorr"
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/cashu/nuts/nut10"
-	"github.com/elnosh/gonuts/cashu/nuts/nut11"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/cashu/nuts/nut10"
+	"github.com/asmogo/gonuts/cashu/nuts/nut11"
 )
 
 const (

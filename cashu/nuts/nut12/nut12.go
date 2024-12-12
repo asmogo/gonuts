@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
-	"github.com/elnosh/gonuts/cashu"
-	"github.com/elnosh/gonuts/crypto"
+	"github.com/asmogo/gonuts/cashu"
+	"github.com/asmogo/gonuts/crypto"
 )
 
 // VerifyProofsDLEQ will verify the DLEQ proofs if present. If the DLEQ proofs are not present

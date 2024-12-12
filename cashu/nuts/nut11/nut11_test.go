@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/elnosh/gonuts/cashu/nuts/nut10"
+	"github.com/asmogo/gonuts/cashu/nuts/nut10"
 )
 
 func TestIsSigAll(t *testing.T) {
