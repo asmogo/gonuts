@@ -66,22 +66,35 @@ type walletMint struct {
 }
 
 type Config struct {
-	WalletPath     string
-	CurrentMintURL string
+	WalletPath      string
+	CurrentMintURL  string
+	StorageType     string
+	PostgresConnStr string // Connection string for PostgreSQL, only used if StorageType is "postgres"
 }
 
-func InitStorage(path string) (storage.WalletDB, error) {
-	// bolt db atm
-	return storage.InitBolt(path)
+func InitStorage(config Config) (storage.WalletDB, error) {
+	switch config.StorageType {
+	case "postgres":
+		if config.PostgresConnStr == "" {
+			return nil, fmt.Errorf("PostgresConnStr is required when StorageType is postgres")
+		}
+		return storage.InitPostgres(config.PostgresConnStr)
+	case "bolt", "": // Default to bolt if not specified
+		return storage.InitBolt(config.WalletPath)
+	default:
+		return nil, fmt.Errorf("unsupported storage type: %s", config.StorageType)
+	}
 }
 
 func LoadWallet(config Config) (*Wallet, error) {
-	path := config.WalletPath
-	if err := os.MkdirAll(path, 0700); err != nil {
-		return nil, err
+	if config.WalletPath != "" {
+		path := config.WalletPath
+		if err := os.MkdirAll(path, 0700); err != nil {
+			return nil, err
+		}
 	}
 
-	db, err := InitStorage(path)
+	db, err := InitStorage(config)
 	if err != nil {
 		return nil, fmt.Errorf("InitStorage: %v", err)
 	}
@@ -528,7 +541,9 @@ func (w *Wallet) HTLCLockedProofs(
 func (w *Wallet) Receive(token cashu.Token, swapToTrusted bool) (uint64, error) {
 	proofsToSwap := token.Proofs()
 	tokenMint := token.Mint()
-
+	if tokenMint != w.defaultMint {
+		return 0, fmt.Errorf("cannot receive token from mint %s", tokenMint)
+	}
 	keyset, err := w.getActiveKeyset(tokenMint)
 	if err != nil {
 		return 0, fmt.Errorf("could not get active keyset: %v", err)

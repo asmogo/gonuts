@@ -37,7 +37,7 @@ func Restore(walletPath, mnemonic string, mintsToRestore []string) (uint64, erro
 	}
 
 	// create wallet db
-	db, err := InitStorage(walletPath)
+	db, err := InitStorage(Config{WalletPath: walletPath})
 	if err != nil {
 		return 0, fmt.Errorf("error restoring wallet: %v", err)
 	}
