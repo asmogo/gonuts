@@ -4,9 +4,7 @@ import (
 	"database/sql"
 	"encoding/hex"
 	"encoding/json"
-	"errors"
 	"fmt"
-
 	"github.com/elnosh/gonuts/cashu"
 	"github.com/elnosh/gonuts/crypto"
 	_ "github.com/lib/pq"
@@ -505,25 +503,27 @@ func (db *PostgresDB) GetKeyset(keysetId string) *crypto.WalletKeyset {
 }
 
 func (db *PostgresDB) IncrementKeysetCounter(keysetId string, num uint32) error {
-	// Get the keyset
-	keyset := db.GetKeyset(keysetId)
-	if keyset == nil {
-		return errors.New("keyset does not exist")
-	}
-
-	// Increment the counter
-	keyset.Counter += num
-
-	// Save the updated keyset
-	jsonKeyset, err := json.Marshal(keyset)
-	if err != nil {
-		return fmt.Errorf("invalid keyset format: %v", err)
-	}
-
-	_, err = db.db.Exec("UPDATE keysets SET data = $1 WHERE id = $2 AND mint_url = $3",
-		jsonKeyset, keyset.Id, keyset.MintURL)
+	// Use jsonb_set to atomically increment the counter field
+	result, err := db.db.Exec(`
+		UPDATE keysets 
+		SET data = jsonb_set(
+			data, 
+			'{Counter}', 
+			to_jsonb((COALESCE((data->>'Counter')::bigint, 0) + $2)::bigint)
+		)
+		WHERE id = $1`,
+		keysetId, num)
 	if err != nil {
 		return err
+	}
+
+	rowsAffected, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+
+	if rowsAffected == 0 {
+		return fmt.Errorf("keyset not found: %s", keysetId)
 	}
 
 	return nil

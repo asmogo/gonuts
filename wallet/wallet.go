@@ -607,16 +607,13 @@ func (w *Wallet) Receive(token cashu.Token, swapToTrusted bool) (uint64, error) 
 			}
 		}
 
+		if err = w.db.IncrementKeysetCounter(req.keyset.Id, uint32(len(req.outputs))); err != nil {
+			return 0, fmt.Errorf("error incrementing keyset counter: %v", err)
+		}
+
 		newProofs, err := swap(tokenMint, req)
 		if err != nil {
 			return 0, fmt.Errorf("could not swap proofs: %v", err)
-		}
-
-		w.mu.Lock()
-		defer w.mu.Unlock()
-
-		if err = w.db.IncrementKeysetCounter(req.keyset.Id, uint32(len(req.outputs))); err != nil {
-			return 0, fmt.Errorf("error incrementing keyset counter: %v", err)
 		}
 
 		if err := w.db.SaveProofs(newProofs); err != nil {
