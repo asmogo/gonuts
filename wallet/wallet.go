@@ -541,9 +541,6 @@ func (w *Wallet) HTLCLockedProofs(
 func (w *Wallet) Receive(token cashu.Token, swapToTrusted bool) (uint64, error) {
 	proofsToSwap := token.Proofs()
 	tokenMint := token.Mint()
-	if tokenMint != w.defaultMint {
-		return 0, fmt.Errorf("cannot receive token from mint %s", tokenMint)
-	}
 	keyset, err := w.getActiveKeyset(tokenMint)
 	if err != nil {
 		return 0, fmt.Errorf("could not get active keyset: %v", err)
