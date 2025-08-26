@@ -1804,6 +1804,9 @@ func (w *Wallet) loadWalletMints() (map[string]walletMint, error) {
 
 	keysets := w.db.GetKeysets()
 	for k, mintKeysets := range keysets {
+		if k == "" {
+			continue
+		}
 		var activeKeyset crypto.WalletKeyset
 		inactiveKeysets := make(map[string]crypto.WalletKeyset)
 		for _, keyset := range mintKeysets {
